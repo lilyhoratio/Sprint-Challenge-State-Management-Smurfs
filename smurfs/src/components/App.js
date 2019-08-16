@@ -41,7 +41,7 @@ const App = () => {
         dispatch({ type: FETCH_SMURFS_DATA_FAILURE, payload: err })
       }
       )
-  }, [])
+  }, [smurfsArray.length])
 
   // POST REQUEST
   const addSmurf = (newSmurf) => {

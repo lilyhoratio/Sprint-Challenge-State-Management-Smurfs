@@ -8,7 +8,9 @@ export const initialState = {
     smurfsArray: [],
     isLoading: false,
     error: '',
-    test: "working!"
+    newSmurf: {
+
+    }
 }
 
 export const reducer = (state, action) => {
