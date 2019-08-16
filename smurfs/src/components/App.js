@@ -19,9 +19,9 @@ import "./App.css";
 const App = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
-  console.log(state)
+  // console.log(state)
   const { smurfsArray, isLoading, error, test } = state
-  console.log(smurfsArray)
+  // console.log(smurfsArray)
 
   // const getSmurfs = () => {
   useEffect(() => {
