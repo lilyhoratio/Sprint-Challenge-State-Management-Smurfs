@@ -1,6 +1,8 @@
 export const FETCH_SMURFS_DATA_START = "FETCH_SMURFS_DATA_START"
 export const FETCH_SMURFS_DATA_SUCCESS = "FETCH_SMURFS_DATA_SUCCESS"
 export const FETCH_SMURFS_DATA_FAILURE = "FETCH_SMURFS_DATA_FAILURE"
+export const POST_SMURF_SUCCESS = "POST_SMURF_SUCCESS"
+export const POST_SMURF_FAILURE = "POST_SMURF_FAILURE"
 
 export const initialState = {
     smurfsArray: [],
@@ -12,6 +14,7 @@ export const initialState = {
 export const reducer = (state, action) => {
     console.log(action)
     switch (action.type) {
+        // GET REQUEST
         case FETCH_SMURFS_DATA_START:
             return {
                 ...state,
@@ -31,6 +34,16 @@ export const reducer = (state, action) => {
                 isLoading: false,
                 error: "error"
             }
+        // POST REQUEST
+        case POST_SMURF_SUCCESS:
+            return {
+                smurfs: [...state.smurfsArray, action.payload]
+            }
+        case POST_SMURF_FAILURE:
+            return {
+                ...state
+            }
+
         default:
             return state;
     }
