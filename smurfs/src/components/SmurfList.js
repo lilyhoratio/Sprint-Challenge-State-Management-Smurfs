@@ -1,9 +1,14 @@
 import React from 'react'
+import Smurf from './Smurf'
 
-function SmurfList() {
+const SmurfList = (props) => {
+    console.log("smurfs list props:", props)
     return (
         <div>
-            <h1>See Smurfs List!</h1>
+            <h2>Smurfs List!</h2>
+            {/* {props.smurfsArray.map((smurf, index) => {
+                <Smurf smurf={smurf} key={index} />
+            })} */}
         </div>
     )
 }

@@ -3,13 +3,14 @@ export const FETCH_SMURFS_DATA_SUCCESS = "FETCH_SMURFS_DATA_SUCCESS"
 export const FETCH_SMURFS_DATA_FAILURE = "FETCH_SMURFS_DATA_FAILURE"
 
 export const initialState = {
-    smurfsData =[],
+    smurfsArray: [],
     isLoading: false,
     error: '',
     test: "working!"
 }
 
 export const reducer = (state, action) => {
+    console.log(action)
     switch (action.type) {
         case FETCH_SMURFS_DATA_START:
             return {
@@ -22,7 +23,7 @@ export const reducer = (state, action) => {
                 ...state,
                 isLoading: false,
                 error: '',
-                smurfsData: action.payload
+                smurfsArray: action.payload
             }
         case FETCH_SMURFS_DATA_FAILURE:
             return {
