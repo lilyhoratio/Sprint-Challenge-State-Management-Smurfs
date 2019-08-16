@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 // import axios from "axios"
 
 const SmurfForm = (props) => {
-    console.log("form props", props)
+    // console.log("form props", props)
 
-    const [newSmurf, setNewSmurf] = useState("")
-    console.log("new smurf", newSmurf)
+    const [newSmurf, setNewSmurf] = useState({ name: "", age: null, height: "" })
+    // console.log("new smurf", newSmurf)
 
     const handleChange = e => {
         setNewSmurf({ ...newSmurf, [e.target.name]: e.target.value })
@@ -14,7 +14,7 @@ const SmurfForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         props.addSmurf(newSmurf)
-        // setNewSmurf("")
+        setNewSmurf("")
     }
 
     return (

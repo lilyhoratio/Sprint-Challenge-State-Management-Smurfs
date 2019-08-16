@@ -36,8 +36,9 @@ export const reducer = (state, action) => {
             }
         // POST REQUEST
         case POST_SMURF_SUCCESS:
+            console.log("POST_SMURF_SUCCESS", action.payload)
             return {
-                smurfs: [...state.smurfsArray, action.payload]
+                smurfsArray: [...state.smurfsArray, action.payload]
             }
         case POST_SMURF_FAILURE:
             return {
